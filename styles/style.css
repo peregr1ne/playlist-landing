@@ -1,14 +1,14 @@
 :root {
   --colortext: red;
   --black-bg: #090719;
-  --main-text-color: #FDFDFD;
+  --main-text-color: #fdfdfd;
   --header-font-size: 14px;
   --a-deco: none;
   --list-style: none;
   --upper-text: uppercase;
   --indigo: rgba(31, 12, 185, 1);
-  --sunflower: #D6E83B;
-  --berry: #E70E31;
+  --sunflower: #d6e83b;
+  --berry: #e70e31;
   --listen-button-font-size: 16px;
   --hero-text-main: 12rem;
   --hero-text-descr: 30px;
@@ -16,11 +16,12 @@
   --band-text-size: 24px;
   --main-big-text: 48px;
   --p-text-size: 18px;
-  --background-main: #0D0A1C;
-  --gray-text: #D1D5DC;
-  --footer-text: #99A1AF;
-  --border-tracks: #27272A;
-  --text-blue-shadow: rgb(31, 12, 185) 4px 4px 0px, rgba(31, 12, 185, 0.5) 8px 8px 0px, rgba(0, 0, 0, 0.9) 12px 12px 30px;
+  --background-main: #0d0a1c;
+  --gray-text: #d1d5dc;
+  --footer-text: #99a1af;
+  --border-tracks: #27272a;
+  --text-blue-shadow: rgb(31, 12, 185) 4px 4px 0px,
+    rgba(31, 12, 185, 0.5) 8px 8px 0px, rgba(0, 0, 0, 0.9) 12px 12px 30px;
   --text-spacing: 0.92px;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
@@ -36,21 +37,17 @@
 
 body {
   height: 100vh;
-  /* width: 100vw; */
-  perspective: 1px;
-  transform-style: preserve-3d;
 }
 
-.section1, .section2 {
+.section1,
+.section2 {
   width: 100%;
   min-height: 100vh;
   position: relative;
-  transform-style: preserve-3d;
 }
 
-
 .courier {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .impact {
@@ -84,7 +81,7 @@ body {
 
 .headerlist {
   display: flex;
-  gap: 12px;
+  gap: 30px;
   color: var(--main-text-color);
   text-decoration: none;
   list-style-type: var(--list-style);
@@ -122,6 +119,7 @@ button a:hover {
 }
 
 a {
+  color: var(--main-text-color);
   text-decoration: var(--a-deco);
 }
 
@@ -178,7 +176,7 @@ p {
 }
 
 .hero {
-  background-image: url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/176/201/original/babusyas.png?1764260091');
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/176/201/original/babusyas.png?1764260091");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -203,11 +201,41 @@ p {
 }
 
 main {
-  padding: 90px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#upBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  height: 50px;
+  width: 50px;
+  background: var(--berry);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#upBtn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#upBtn:hover {
+  background: var(--indigo);
 }
 
 .about {
@@ -216,7 +244,7 @@ main {
   justify-content: center;
   padding: 48px;
   background: var(--black-bg);
-  width: 60%;
+  width: 70%;
   border: 4px solid var(--indigo);
   transform: var(--tw-skew-y);
 }
@@ -265,7 +293,7 @@ main {
   justify-content: space-between;
   padding: 48px;
   background: var(--black-bg);
-  width: 100%;
+  width: 80%;
   border: 4px solid var(--border-tracks);
   margin-bottom: 20px;
   transition: all 300ms ease-in-out;
@@ -280,7 +308,7 @@ main {
 }
 
 .genre {
-  width: 130px;
+  width: 135px;
   text-align: center;
   background: var(--indigo);
   padding: 4px 16px;
@@ -289,7 +317,7 @@ main {
   letter-spacing: var(--text-spacing);
 }
 
-p.genrep{
+p.genrep {
   border-left: 4px solid var(--indigo);
   padding: 16px;
   margin-bottom: 24px;
@@ -323,7 +351,7 @@ li.styles {
 }
 
 .description:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   border: 4px solid var(--indigo);
   rotate: 3deg;
 }
@@ -341,7 +369,7 @@ footer {
 }
 
 footer p {
-opacity: 0.5;
+  opacity: 0.5;
 }
 
 .upbord {
@@ -349,7 +377,7 @@ opacity: 0.5;
   flex-direction: column;
   text-align: center;
   padding: 48px 32px;
-  width: 45%;
+  width: 55%;
   border-top: 3px solid var(--berr);
 }
 
@@ -381,4 +409,102 @@ footer a:visited {
 
 footer a:hover {
   color: var(--sunflower);
+}
+
+@media all and (max-width: 800px) {
+  .hero {
+    background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/176/231/original/playlist_bg_700.png?1764419795");
+  }
+
+  .headerlist {
+    display: none;
+  }
+
+  .description {
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width: 1075px) {
+  main {
+    padding: 50px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  .about {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .tracks-menu {
+    padding-top: 30px;
+  }
+
+  .description {
+    padding: 34px;
+  }
+
+  .tracks {
+    padding: 0;
+  }
+
+  .genre {
+    width: 122px;
+    font-size: 12px;
+  }
+
+  .styles {
+    font-size: 12px;
+    flex-wrap: nowrap;
+  }
+
+  li.styles {
+    padding: 6px 10px;
+  }
+
+  .description:hover {
+    transform: scale(1.03);
+  }
+
+  .upbord {
+    width: 85%;
+  }
+
+  .motto {
+    font-size: 12px;
+  }
+}
+
+@media all and (max-width: 495px) {
+  .header {
+    padding: 20px 36px;
+  }
+
+  .hero {
+    background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/176/232/original/playlist_bg_mobile.png?1764423522");
+  }
+
+  .italic {
+    font-size: 14px;
+  }
+
+  .description {
+    width: 90%;
+  }
+
+  .styles {
+    font-size: 10px;
+  }
 }
